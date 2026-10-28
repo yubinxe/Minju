@@ -2,4 +2,4 @@
 :HL["/Minju/_next/static/chunks/32xxhnpwvvoaj.css","style"]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":"/_not-found","h":96,"c":"$Q2"}]]
-0:{"b":"xgRJIYpAYiCNAmtGD4SKk","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"fCK7bjS3c-htC1WTMVFwe","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
