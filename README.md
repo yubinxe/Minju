@@ -33,3 +33,11 @@ npm run build
 ## 배포
 
 Vercel에서 이 저장소를 Import하면 프레임워크(Next.js)가 자동 감지된다. `main` 푸시마다 프로덕션 배포.
+
+### 정적 호스팅(GitHub Pages)
+
+```bash
+STATIC_EXPORT=1 BASE_PATH=/Minju SITE_URL=https://yubinxe.github.io/Minju npm run build   # → out/
+```
+
+`out/` 내용(+ `.nojekyll`)을 `gh-pages` 브랜치에 올리면 https://yubinxe.github.io/Minju/ 로 서비스된다.

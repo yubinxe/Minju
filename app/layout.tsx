@@ -5,6 +5,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import 'pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css'
 import './globals.css'
 import { SiteHeader } from '@/components/SiteHeader'
+import { ON_VERCEL, SITE_URL } from '@/lib/site'
 
 const serif = Noto_Serif_KR({
   weight: ['400', '500', '600', '700'],
@@ -14,12 +15,9 @@ const serif = Noto_Serif_KR({
   variable: '--font-serif',
 })
 
-const siteUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
-  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-  : 'http://localhost:3000'
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(SITE_URL),
   title: { default: '민주 파노라마 — 70년을 한 장에', template: '%s · 민주 파노라마' },
   description: '1955년 민주당 창당부터 오늘까지, 더불어민주당 70년의 계보를 열네 장면으로 펼친 학습 자료. 민주청년지도자 양성과정 수강생 참고용.',
   openGraph: { type: 'website', locale: 'ko_KR', siteName: '민주 파노라마' },
@@ -50,8 +48,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <p className="foot-meta">최종 갱신 2026년 10월</p>
           </div>
         </footer>
-        <Analytics />
-        <SpeedInsights />
+        {ON_VERCEL && <Analytics />}
+        {ON_VERCEL && <SpeedInsights />}
       </body>
     </html>
   )

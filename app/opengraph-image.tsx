@@ -6,6 +6,7 @@ import { ERAS } from '@/data/eras'
 export const alt = '민주 파노라마 — 70년을 한 장에'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
+export const dynamic = 'force-static'
 
 export default async function Image() {
   const dir = join(process.cwd(), 'node_modules/pretendard/dist/public/static')

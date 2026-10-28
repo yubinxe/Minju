@@ -1,10 +1,9 @@
 import type { MetadataRoute } from 'next'
+import { SITE_URL } from '@/lib/site'
 
-const base = process.env.VERCEL_PROJECT_PRODUCTION_URL
-  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-  : 'http://localhost:3000'
+export const dynamic = 'force-static'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date('2026-10-27')
-  return ['', '/archive', '/course'].map(p => ({ url: `${base}${p}`, lastModified: now, changeFrequency: 'monthly', priority: p ? 0.8 : 1 }))
+  const now = new Date('2026-10-28')
+  return ['/', '/archive/', '/course/'].map(p => ({ url: `${SITE_URL}${p}`, lastModified: now, changeFrequency: 'monthly', priority: p === '/' ? 1 : 0.8 }))
 }
